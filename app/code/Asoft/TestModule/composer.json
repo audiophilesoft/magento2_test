@@ -1,0 +1,25 @@
+{
+  "name": "asoft/testmodule",
+  "description": "summary",
+  "license": [
+    "OSL-3.0"
+  ],
+  "type": "magento2-module",
+  "version": "0.0.2",
+  "authors": [
+    {
+      "name": "Taras Kovrizhenko",
+      "email": "audi@audiophilesoft.ru",
+      "homepage": "https://github.com/audiophilesoft",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Asoft\\TestModule\\": ""
+    }
+  }
+}

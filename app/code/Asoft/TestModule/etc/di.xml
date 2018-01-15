@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="hello_world" xsi:type="object">Asoft\TestModule\Console\Command\HelloCommand</item>
+                <item name="create_category" xsi:type="object">
+                    Asoft\TestModule\Console\Command\Create\CreateCategoryCommand
+                </item>
+                <item name="create_attribute" xsi:type="object">
+                    Asoft\TestModule\Console\Command\Create\CreateAttributeCommand
+                </item>
+                <item name="create_product" xsi:type="object">
+                    Asoft\TestModule\Console\Command\Create\CreateProductCommand
+                </item>
+                <item name="list_urls" xsi:type="object">Asoft\TestModule\Console\Command\Show\ListUrlsCommand</item>
+                <item name="show_custom_values" xsi:type="object">
+                    Asoft\TestModule\Console\Command\Show\ShowCustomValuesCommand
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Asoft\TestModule\Console\Command\Create\AbstractCommand">
+        <arguments>
+            <argument name="model" xsi:type="object">Asoft\TestModule\Model\TestModel</argument>
+        </arguments>
+    </type>
+    <type name="Asoft\TestModule\Console\Command\Show\AbstractCommand">
+        <arguments>
+            <argument name="helper" xsi:type="object">Asoft\TestModule\Helper\Data</argument>
+        </arguments>
+    </type>
+    <type name="Asoft\TestModule\Helper\Data">
+        <plugin name="asoft_helper_plugin" type="Asoft\TestModule\Plugin\HelperPlugin"/>
+    </type>
+    <preference for="\Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save"
+                type="\Asoft\TestModule\Rewrite\AttributeSave"/>
+</config>

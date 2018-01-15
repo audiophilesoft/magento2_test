@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="content">
+        <block class="Asoft\TestModule\Block\Index" name="helloworld_index_index"
+               template="Asoft_TestModule::index.phtml"/>
+        <block name="another_block" template="Asoft_TestModule::another.phtml"/>
+    </referenceContainer>
+</page>
